@@ -17,3 +17,25 @@ A comprehensive **Machine Learning pipeline** designed to detect phishing attack
 
 ## 🗂️ Project Structure
 
+
+---
+
+## 🔁 Pipeline Overview
+
+Your `main.py` handles the following:
+
+1. **Data Ingestion**  
+   Loads data (likely from MongoDB or local CSV) and stores it in the project.
+
+2. **Data Validation**  
+   Validates ingested data against a predefined schema in `data_schema/`.
+
+3. **Data Transformation**  
+   Processes and transforms the clean data for model readiness (e.g., encoding, scaling).
+
+All steps are modular and configurable via:
+```python
+from networksecurity.components import DataIngestion, DataValidation, DataTransformation
+from networksecurity.entity.config_entity import (
+    DataIngestionConfig, DataValidationConfig, DataTransformationConfig, TrainingPipelineConfig
+)
